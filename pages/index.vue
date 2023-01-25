@@ -13,8 +13,6 @@ const url = (await import(
     `~/assets/${css1}.css?url`
     )).default;
 
-console.log(url)
-
 useHead({
     link: [{
         rel: 'stylesheet',
