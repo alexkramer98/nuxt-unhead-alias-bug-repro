@@ -1,14 +1,24 @@
 <template>
     <span>
-        should be red
+        should be red/blue
     </span>
 </template>
 
 <script setup lang="ts">
+const css0 = 'css0'
+const css1 = 'css1'
+
+const url = (await import(
+    /* @vite-ignore */
+    `~/assets/${css1}.css?url`
+    )).default;
+
+console.log(url)
+
 useHead({
     link: [{
         rel: 'stylesheet',
-        href: '~/assets/css/default.css',
+        href: url,
     }],
 })
 </script>
